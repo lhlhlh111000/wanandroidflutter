@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+part 'article_item.g.dart';
+
 @JsonSerializable()
 class ArticleItem extends Object {
   @JsonKey(name: 'adminAdd')
@@ -103,4 +105,45 @@ class ArticleItem extends Object {
 
   @JsonKey(name: 'zan')
   int? zan;
+
+  ArticleItem(
+      this.adminAdd,
+      this.apkLink,
+      this.audit,
+      this.author,
+      this.canEdit,
+      this.chapterId,
+      this.chapterName,
+      this.collect,
+      this.courseId,
+      this.desc,
+      this.descMd,
+      this.envelopePic,
+      this.fresh,
+      this.host,
+      this.id,
+      this.link,
+      this.isAdminAdd,
+      this.niceDate,
+      this.niceShareDate,
+      this.origin,
+      this.prefix,
+      this.projectLink,
+      this.publishTime,
+      this.realSuperChapterId,
+      this.selfVisible,
+      this.shareDate,
+      this.shareUser,
+      this.superChapterId,
+      this.superChapterName,
+      this.title,
+      this.type,
+      this.userId,
+      this.visible,
+      this.zan
+      );
+
+  factory ArticleItem.fromJson(Map<String, dynamic> json) => _$ArticleItemFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ArticleItemToJson(this);
 }
