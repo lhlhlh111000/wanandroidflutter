@@ -43,7 +43,7 @@ class _MainPageState extends State<MainPage> {
           ),
           body: IndexedStack (
             index: mainController.currentIndex.value,
-            children: const [
+            children: [
               HomePage(),
               DiscoverPage(),
               MinePage(),
