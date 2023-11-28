@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wanandroidflutter/model/export_model.dart';
+import 'package:wanandroidflutter/route/router_table.dart';
 
 class ArticleItemView extends StatelessWidget {
 
@@ -17,20 +19,25 @@ class ArticleItemView extends StatelessWidget {
       author = '分享人:${articleItem.shareUser}';
     }
 
-    return Padding(
-      padding: EdgeInsets.all(14.sp),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(articleItem.title ?? '', style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),),
-          SizedBox(height: 14.sp,),
-          Row(
-            children: [
-              Text(author, style: TextStyle(fontSize: 14.sp),),
-            ],
-          )
-        ],
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pushNamed(RouterTable.detail, arguments: articleItem.link ?? '');
+      },
+      child: Padding(
+        padding: EdgeInsets.all(14.sp),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(articleItem.title ?? '', style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),),
+            SizedBox(height: 14.sp,),
+            Row(
+              children: [
+                Text(author, style: TextStyle(fontSize: 14.sp),),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wanandroidflutter/ui/main/index.dart';
+import 'package:wanandroidflutter/route/router_table.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
+        onGenerateRoute: RouterTable.onGenerateRoute,
         home: const MainPage(),
       ),
     );
